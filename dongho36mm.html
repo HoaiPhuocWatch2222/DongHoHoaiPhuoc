@@ -72,7 +72,55 @@ footer{margin-top:60px;border-top:1px solid var(--border);background:var(--white
 .shop h3{margin:0}
 .shop p{margin:6px 0;color:var(--muted)}
 .contact a{display:block;padding:6px 0;color:#111}
-</style>
+
+/* ========================= */
+/* BỔ SUNG CSS CHỐNG VỠ UI  */
+/* (KHÔNG ĐỔI HTML)         */
+/* ========================= */
+
+/* 1) Ngăn flex-children gây tràn ngang */
+.nav > *, .meta, .actions { min-width:0; }
+
+/* 2) Menu thành flex để canh khoảng cách đều */
+.menu{ display:flex; gap:8px; }
+
+/* 3) Nút có thể xuống hàng khi thiếu chỗ */
+.actions{ flex-wrap:wrap; }
+
+/* 4) Phòng ngừa chữ/URL dài làm vỡ hộp */
+h1,h2,h3,.title,.price,.size,.meta,.btn{ word-wrap:break-word; overflow-wrap:anywhere; }
+
+/* 5) Thumbs cuộn mượt, không tạo thanh cuộn dày */
+.thumbs{ overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x proximity; }
+.thumbs img{ scroll-snap-align:start; }
+
+/* 6) Breakpoints an toàn cho mọi màn hình */
+@media (max-width:920px){
+  .container{ padding:16px; }
+  .nav{ gap:10px; flex-wrap:wrap; }
+  /* menu xuống dòng riêng + cuộn ngang nhẹ */
+  .menu{ order:3; width:100%; overflow-x:auto; padding-bottom:6px; }
+  .cta{ order:2; white-space:nowrap; }
+}
+
+@media (max-width:820px){
+  /* Trang có block .detail (nếu dùng ở trang khác) thì 2 cột -> 1 cột */
+  .detail{ grid-template-columns:1fr; }
+}
+
+@media (max-width:700px){
+  .hero h1{ font-size:32px; }
+  .logo-wrap img{ width:72%; }
+  .hero-card{ padding:20px; }
+  .footer-wrap{ grid-template-columns:1fr; }
+  .shop{ grid-template-columns:64px 1fr; }
+}
+
+@media (max-width:520px){
+  .grid{ gap:14px; }
+  .btn{ padding:10px 14px; }
+}
+  </style>
 </head>
 <body>
 

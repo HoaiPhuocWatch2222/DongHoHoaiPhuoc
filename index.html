@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Trang chủ – Hoai Phuoc Watch</title>
   <style>
+/* ========== THEME ========== */
 :root{
   --silver:#f5f6fa;
   --white:#ffffff;
@@ -20,27 +22,33 @@ body{margin:0;background:var(--silver);color:var(--text);font:16px/1.7 system-ui
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 .container{max-width:var(--max);margin:auto;padding:24px}
-/* Header */
+
+/* ========== HEADER ========== */
 header{background:var(--white);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
 .nav{display:flex;align-items:center;gap:16px}
+/* Chống tràn khi wrap */
+.nav > *{min-width:0}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{height:44px;width:auto;border-radius:8px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
-.brand .title{font-weight:800;letter-spacing:.2px}
-.brand .title small{display:block;color:var(--muted);font-weight:500}
+.brand .title{font-weight:800;letter-spacing:.2px;white-space:nowrap}
+.brand .title small{display:block;color:var(--muted);font-weight:500;white-space:normal}
 .spacer{flex:1}
-.menu a{padding:12px 14px;border-radius:10px;color:#1b1f2a}
+.menu{display:flex;gap:8px}
+.menu a{padding:12px 14px;border-radius:10px;color:#1b1f2a;flex:0 0 auto}
 .menu a:hover,.menu a.active{color:var(--gold);background:#fff8d9}
-.cta{background:linear-gradient(135deg,var(--gold),#f7e7a1);color:#1a1a1a;padding:10px 14px;border-radius:12px;font-weight:800}
-/* Hero with centered logo */
+.cta{background:linear-gradient(135deg,var(--gold),#f7e7a1);color:#1a1a1a;padding:10px 14px;border-radius:12px;font-weight:800;white-space:nowrap}
+
+/* ========== HERO ========== */
 .hero{padding:36px 12px;display:grid;place-items:center}
 .hero-card{max-width:980px;width:100%;background:var(--white);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:28px}
-.hero h1{font-family:Georgia,'Times New Roman',serif;font-size:46px;line-height:1.1;text-align:center;margin:0 0 8px}
+.hero h1{font-family:Georgia,'Times New Roman',serif;font-size:46px;line-height:1.1;text-align:center;margin:0 0 8px;word-break:keep-all}
 .logo-wrap{display:grid;place-items:center;margin:12px 0 8px}
 .logo-wrap img{width:min(560px,90%);border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,.12)}
 .hero-actions{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:var(--white)}
 .btn.primary{background:var(--gold);border-color:var(--gold);color:#1a1a1a;font-weight:800}
-/* Grid */
+
+/* ========== GRID SẢN PHẨM ========== */
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:22px 0}
 .chip{background:var(--white);border:1px solid var(--border);padding:8px 12px;border-radius:10px;cursor:pointer}
 .chip.active{outline:2px solid var(--gold)}
@@ -52,19 +60,13 @@ header{background:var(--white);border-bottom:1px solid var(--border);box-shadow:
 @media (max-width:520px){.grid{grid-template-columns:1fr}}
 .card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .thumb{aspect-ratio:1/1;background:#f7f8fc;border:1px solid var(--border);border-radius:10px;overflow:hidden}
-.card h3{font-size:16px;margin:10px 0 6px}
-.meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:14px}
+.card h3{font-size:16px;margin:10px 0 6px;word-wrap:break-word;overflow-wrap:anywhere}
+.meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:14px;min-width:0}
 .price{color:#6b5200;font-weight:800}
 .size{font-size:13px;border:1px dashed #d3d7e6;border-radius:8px;padding:2px 8px}
-.actions{margin-top:auto;display:flex;gap:10px}
-/* Detail */
-.detail{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
-.gall{display:grid;grid-template-rows:auto 90px;gap:12px}
-.thumbs{display:grid;grid-auto-flow:column;gap:10px;overflow:auto}
-.thumbs img{height:90px;width:auto;border:1px solid var(--border);border-radius:8px}
-.specs{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px}
-.buy{margin-top:20px}
-/* Footer */
+.actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap} /* chống bể nút */
+
+/* ========== FOOTER ========== */
 footer{margin-top:60px;border-top:1px solid var(--border);background:var(--white)}
 .footer-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;padding:30px 0}
 .shop{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:center}
@@ -72,7 +74,34 @@ footer{margin-top:60px;border-top:1px solid var(--border);background:var(--white
 .shop h3{margin:0}
 .shop p{margin:6px 0;color:var(--muted)}
 .contact a{display:block;padding:6px 0;color:#111}
-</style>
+
+/* ========== RESPONSIVE FIXES TOÀN SITE ========== */
+/* Header linh hoạt: xuống dòng gọn và menu cuộn ngang khi hẹp */
+@media (max-width:920px){
+  .container{padding:16px}
+  .nav{gap:10px;flex-wrap:wrap}
+  .menu{order:3;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+  .cta{order:2}
+}
+
+/* Hero & Footer gọn lại, tránh chữ/ảnh quá to */
+@media (max-width:700px){
+  .hero h1{font-size:32px}
+  .logo-wrap img{width:72%}
+  .hero-card{padding:20px}
+  .footer-wrap{grid-template-columns:1fr}
+  .shop{grid-template-columns:64px 1fr}
+}
+
+/* Khoảng cách nhỏ hơn ở màn rất nhỏ */
+@media (max-width:520px){
+  .grid{gap:14px}
+  .btn{padding:10px 14px}
+}
+
+/* Phòng ngừa chữ/URL dài gây tràn */
+h1,h2,h3,.title,.price,.size,.meta,.btn{word-wrap:break-word;overflow-wrap:anywhere}
+  </style>
 </head>
 <body>
 
@@ -94,19 +123,19 @@ footer{margin-top:60px;border-top:1px solid var(--border);background:var(--white
 
 <main class="container">
 
-<section class="hero">
-  <div class="hero-card">
-    <h1>Hoai Phuoc Watch</h1>
-    <div class="logo-wrap"><img src="images/logo.png" alt="Logo Hoai Phuoc Watch"></div>
-    <div class="hero-actions">
-      <a class="btn primary" href="dongho36mm.html">Xem dòng 36mm</a>
-      <a class="btn primary" href="dongho40mm.html">Xem dòng 40mm</a>
+  <section class="hero">
+    <div class="hero-card">
+      <h1>Hoai Phuoc Watch</h1>
+      <div class="logo-wrap"><img src="images/logo.png" alt="Logo Hoai Phuoc Watch"></div>
+      <div class="hero-actions">
+        <a class="btn primary" href="dongho36mm.html">Xem dòng 36mm</a>
+        <a class="btn primary" href="dongho40mm.html">Xem dòng 40mm</a>
+      </div>
     </div>
-  </div>
 
-  <h2 class="section" style="margin:26px 0 10px;text-align:center">Bộ sưu tập nổi bật</h2>
-  <div id="home-grid" class="grid"></div>
-</section>
+    <h2 class="section" style="margin:26px 0 10px;text-align:center">Bộ sưu tập nổi bật</h2>
+    <div id="home-grid" class="grid"></div>
+  </section>
 
 </main>
 
@@ -130,7 +159,7 @@ footer{margin-top:60px;border-top:1px solid var(--border);background:var(--white
 </footer>
 
 <script>
-
+/* Dummy data & render – giữ nguyên logic cũ */
 const PRODUCTS = Array.from({length:50}).map((_,i)=>{
   const size = i < 25 ? 36 : 40;
   const idx = (i+1).toString().padStart(3,'0');
@@ -150,7 +179,6 @@ const PRODUCTS = Array.from({length:50}).map((_,i)=>{
       specs:[`Đường kính: ${size}mm`,`Bề dày mặt: ${size==36?11:12}mm`,`Bộ máy: Automatic`,`Dây: Thép mạ PVD`,`Vỏ/khóa: Thép PVD`,`Chống nước: 3ATM`] }
   }
 });
-
 
 function renderCards(target, items){
   target.innerHTML = items.map(p=>`
