@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cartier – Hoai Phuoc Watch</title>
+  <style>
+:root{--silver:#f5f6fa;--white:#fff;--text:#222;--muted:#555a6a;--gold:#d4af37;--border:#e7e8f2;--max:1200px;--shadow:0 10px 25px rgba(0,0,0,.06)}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;background:var(--silver);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+a{color:inherit;text-decoration:none;transition:.25s} 
+img{display:block;max-width:100%;height:auto;transition:transform .25s}
+a.thumb:hover img{transform:scale(1.03)}
+.container{max-width:var(--max);margin:auto;padding:24px}
+
+/* Header */
+header{background:var(--white);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{height:44px;border-radius:8px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+.brand .title{font-weight:800;letter-spacing:.2px}
+.brand .title small{display:block;color:var(--muted);font-weight:500}
+.spacer{flex:1}
+.menu{display:flex;gap:8px;overflow:auto}
+.menu a{padding:12px 14px;border-radius:10px;color:#1b1f2a;white-space:nowrap}
+.menu a:hover,.menu a.active{color:var(--gold);background:#fff8d9}
+.cta{background:linear-gradient(135deg,var(--gold),#f7e7a1);color:#1a1a1a;padding:10px 14px;border-radius:12px;font-weight:800}
+
+/* Grid */
+h2.section{margin:16px 0}
+.toolbar{display:flex;gap:10px;align-items:center;margin:22px 0;flex-wrap:wrap}
+.search{flex:1;min-width:220px}
+.search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--white)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.thumb{aspect-ratio:1/1;background:#f7f8fc;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:block}
+.card h3{font-size:16px;margin:10px 0 6px}
+.meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:14px;flex-wrap:wrap}
+.price{color:#6b5200;font-weight:800}
+.badge{font-size:12px;border:1px dashed #d3d7e6;border-radius:8px;padding:2px 8px}
+.actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  background:linear-gradient(135deg,var(--gold),#f7e7a1);
+  color:#1a1a1a;border:none;border-radius:8px;
+  padding:8px 10px;font-weight:700;text-align:center;
+  display:inline-block;transition:.2s;
+}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+/* Footer */
+footer{margin-top:60px;border-top:1px solid var(--border);background:var(--white)}
+.footer-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;padding:30px 0}
+.shop{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:center}
+.shop .logo{width:80px;height:80px;border-radius:10px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.shop h3{margin:0}
+.shop p{margin:6px 0;color:var(--muted)}
+.contact a{display:block;padding:6px 0;color:#111}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="Hoai Phuoc Watch logo">
+      <div class="title">Hoai Phuoc Watch 2222<small>Đồng hồ Homage &amp; Dresswatch</small></div>
+    </a>
+    <div class="spacer"></div>
+    <nav class="menu">
+      <a href="index.html" class="nav-home">Trang chủ</a>
+      <a href="rolex.html" class="nav-rolex">Rolex</a>
+      <a href="hublot.html" class="nav-hublot">Hublot</a>
+      <a href="cartier.html" class="nav-cartier active">Cartier</a>
+    </nav>
+    <a class="cta" href="https://zalo.me/0926991129" target="_blank" rel="noopener">Zalo 24/7</a>
+  </div>
+</header>
+
+<main class="container">
+  <h2 class="section">Cartier Santos - Danh mục sản phẩm</h2>
+  <div class="toolbar">
+    <div class="search"><input id="q" placeholder="Tìm theo tên sản phẩm..." /></div>
+  </div>
+  <div id="grid" class="grid"></div>
+</main>
+
+<footer>
+  <div class="container footer-wrap">
+    <div class="shop">
+      <div class="logo"><img src="images/logo.png" alt="logo"></div>
+      <div>
+        <h3>Hoai Phuoc Watch 2222</h3>
+        <p>📞 <strong>HOTLINE/ZALO:</strong> <a href="tel:0926991129">0926991129</a></p>
+        <p>🛒 <strong>MUA HÀNG ONLINE 24/7 – Zalo:</strong> <a href="https://zalo.me/0926991129" target="_blank" rel="noopener">0926991129</a></p>
+        <p>📍 <strong>ĐỊA CHỈ:</strong> MT Đường 3 Tháng 2 – TPHCM Q11</p>
+      </div>
+    </div>
+    <div class="contact">
+      <h3>Liên hệ</h3>
+      <a href="#" aria-label="facebook">Facebook</a>
+      <a href="https://zalo.me/0926991129" target="_blank" rel="noopener">Zalo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== 7 SẢN PHẨM CARTIER SANTOS =====
+const PRODUCTS = [
+  { id: "cartier-001", brand: "Cartier", name: "Cartier Santos 001", price: "2.300.000đ", image: "image/cartier/cartier1.jpg", short: `
+    Máy cơ Miyota Nhật 🇯🇵<br>
+    Size chuẩn Auth 39mm<br>
+    Chống nước 3ATM<br>
+    Bảo hành máy 1 năm<br>
+    Bản dây thép<br>
+    Giá: 2.300.000đ
+  ` },
+  { id: "cartier-002", brand: "Cartier", name: "Cartier Santos 002", price: "2.300.000đ", image: "image/cartier/cartier2.jpg", short: `
+    Máy cơ Miyota Nhật 🇯🇵<br>
+    Size chuẩn Auth 39mm<br>
+    Chống nước 3ATM<br>
+    Bảo hành máy 1 năm<br>
+    Bản dây thép<br>
+    Giá: 2.300.000đ
+  ` },
+  { id: "cartier-003", brand: "Cartier", name: "Cartier Santos 003", price: "2.300.000đ", image: "image/cartier/cartier3.jpg", short: `
+    Máy cơ Miyota Nhật 🇯🇵<br>
+    Size chuẩn Auth 39mm<br>
+    Chống nước 3ATM<br>
+    Bảo hành máy 1 năm<br>
+    Bản dây thép<br>
+    Giá: 2.300.000đ
+  ` },
+  { id: "cartier-004", brand: "Cartier", name: "Cartier Santos 004 (Dây da)", price: "2.300.000đ", image: "image/cartier/cartier4.jpg", short: `
+    Máy cơ Miyota Nhật 🇯🇵<br>
+    Size chuẩn Auth 39mm<br>
+    Chống nước 3ATM<br>
+    Bảo hành máy 1 năm<br>
+    Bản dây da<br>
+    Giá: 2.300.000đ
+  ` },
+  { id: "cartier-005", brand: "Cartier", name: "Cartier Santos 005", price: "2.300.000đ", image: "image/cartier/cartier5.jpg", short: `
+    Máy cơ Miyota Nhật 🇯🇵<br>
+    Size chuẩn Auth 39mm<br>
+    Chống nước 3ATM<br>
+    Bảo hành máy 1 năm<br>
+    Bản dây thép<br>
+    Giá: 2.300.000đ
+  ` },
+  { id: "cartier-006", brand: "Cartier", name: "Cartier Santos 006", price: "2.300.000đ", image: "image/cartier/cartier6.jpg", short: `
+    Máy cơ Miyota Nhật 🇯🇵<br>
+    Size chuẩn Auth 39mm<br>
+    Chống nước 3ATM<br>
+    Bảo hành máy 1 năm<br>
+    Bản dây thép<br>
+    Giá: 2.300.000đ
+  ` },
+  { id: "cartier-007", brand: "Cartier", name: "Cartier Santos 007", price: "2.300.000đ", image: "image/cartier/cartier7.jpg", short: `
+    Máy cơ Miyota Nhật 🇯🇵<br>
+    Size chuẩn Auth 39mm<br>
+    Chống nước 3ATM<br>
+    Bảo hành máy 1 năm<br>
+    Bản dây thép<br>
+    Giá: 2.300.000đ
+  ` }
+];
+
+function renderCards(target, items){
+  target.innerHTML = items.map(p=>`
+    <article class="card">
+      <a class="thumb" href="product.html?id=${p.id}">
+        <img src="${p.image}" alt="${p.name}">
+      </a>
+      <h3>${p.name}</h3>
+      <div class="meta">
+        <span class="badge">${p.brand}</span>
+        <span class="price">${p.price}</span>
+      </div>
+      <p style="font-size:14px;color:#555">${p.short}</p>
+      <div class="actions">
+        <a class="btn" href="product.html?id=${p.id}">Chi tiết</a>
+        <a class="btn" href="https://zalo.me/0926991129" target="_blank" rel="noopener">Zalo</a>
+      </div>
+    </article>`).join('');
+}
+
+(function setup(){
+  const grid = document.getElementById('grid');
+  const input = document.getElementById('q');
+  function apply(){
+    const q = (input?.value||'').toLowerCase().trim();
+    renderCards(grid, PRODUCTS.filter(p => p.name.toLowerCase().includes(q)));
+  }
+  input?.addEventListener('input', apply);
+  apply();
+})();
+
+document.querySelector('.nav-cartier')?.classList.add('active');
+</script>
+</body>
+</html>

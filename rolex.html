@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rolex – Hoai Phuoc Watch</title>
+<style>
+:root{--silver:#f5f6fa;--white:#fff;--text:#222;--muted:#555a6a;--gold:#d4af37;--border:#e7e8f2;--max:1200px;--shadow:0 10px 25px rgba(0,0,0,.06)}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;background:var(--silver);color:var(--text);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+a{color:inherit;text-decoration:none} img{display:block;max-width:100%;height:auto;transition:transform .25s}
+a:hover img{transform:scale(1.03)}
+.container{max-width:var(--max);margin:auto;padding:24px}
+
+/* Header */
+header{background:var(--white);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{height:44px;border-radius:8px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+.brand .title{font-weight:800;letter-spacing:.2px}
+.brand .title small{display:block;color:var(--muted);font-weight:500}
+.spacer{flex:1}
+.menu{display:flex;gap:8px;overflow:auto}
+.menu a{padding:12px 14px;border-radius:10px;color:#1b1f2a;white-space:nowrap}
+.menu a:hover,.menu a.active{color:var(--gold);background:#fff8d9}
+.cta{background:linear-gradient(135deg,var(--gold),#f7e7a1);color:#1a1a1a;padding:10px 14px;border-radius:12px;font-weight:800}
+
+/* Tabs */
+h2.section{margin:16px 0}
+.tabs{display:flex;gap:10px;justify-content:center;margin:20px 0;flex-wrap:wrap}
+.tabs button{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:8px 14px;cursor:pointer;font-weight:600}
+.tabs button.active{background:#fff8d9;color:#6b5200;border-color:#f0dea2}
+
+/* Thanh tìm kiếm dài toàn trang */
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin: 28px auto 36px;
+}
+
+.search {
+  width: 100%;
+  max-width: 1000px; /* có thể tăng 1100–1200px nếu muốn dài hơn */
+}
+
+.search input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 15.5px;
+  color: #222;
+  background: #fff;
+  border: 1px solid #e4e5ef;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all .25s ease;
+}
+
+.search input::placeholder {
+  color: #999;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 3px 12px rgba(212,175,55,0.25);
+}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-bottom:30px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.thumb{aspect-ratio:1/1;background:#f7f8fc;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.card h3{font-size:16px;margin:10px 0 6px}
+.details{font-size:14px;color:#333;line-height:1.6;background:#fafafa;border:1px dashed #ddd;border-radius:8px;padding:8px;margin-bottom:6px}
+.price{color:#6b5200;font-weight:800;margin-top:auto}
+.btn{background:linear-gradient(135deg,var(--gold),#f7e7a1);color:#1a1a1a;border:none;border-radius:8px;padding:8px 10px;font-weight:700;text-align:center;display:inline-block;margin-top:8px;transition:.2s;}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+.pager{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 30px}
+.pager button{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:6px 10px;cursor:pointer}
+.pager button.active{color:var(--gold);background:#fff8d9;border-color:#f0dea2}
+
+/* Footer */
+footer{margin-top:60px;border-top:1px solid var(--border);background:var(--white)}
+.footer-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;padding:30px 0}
+.shop{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:center}
+.shop .logo{width:80px;height:80px;border-radius:10px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.shop h3{margin:0}
+.shop p{margin:6px 0;color:var(--muted)}
+.contact a{display:block;padding:6px 0;color:#111}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="Hoai Phuoc Watch logo">
+      <div class="title">Hoai Phuoc Watch 2222<small>Đồng hồ Homage & Dresswatch</small></div>
+    </a>
+    <div class="spacer"></div>
+    <nav class="menu">
+      <a href="index.html" class="nav-home">Trang chủ</a>
+      <a href="rolex.html" class="nav-rolex active">Rolex</a>
+      <a href="hublot.html" class="nav-hublot">Hublot</a>
+      <a href="cartier.html" class="nav-cartier">Cartier</a>
+    </nav>
+    <a class="cta" href="https://zalo.me/0926991129" target="_blank" rel="noopener">Zalo 24/7</a>
+  </div>
+</header>
+
+<main class="container">
+  <h2 class="section">Rolex – Danh mục sản phẩm</h2>
+
+  <div class="tabs">
+    <button id="btn-china" class="active">🏭 China</button>
+    <button id="btn-japan">🇯🇵 Japan</button>
+    <button id="btn-vsfactory">⚙️ VS Factory</button>
+  </div>
+
+  <div class="toolbar">
+    <div class="search"><input id="q" placeholder="Tìm theo tên sản phẩm..." /></div>
+  </div>
+
+  <div id="grid" class="grid"></div>
+  <div id="pager" class="pager"></div>
+</main>
+
+<footer>
+  <div class="container footer-wrap">
+    <div class="shop">
+      <div class="logo"><img src="images/logo.png" alt="logo"></div>
+      <div>
+        <h3>Hoai Phuoc Watch 2222</h3>
+        <p>📞 <strong>HOTLINE/ZALO:</strong> <a href="tel:0926991129">0926991129</a></p>
+        <p>📍 <strong>ĐỊA CHỈ:</strong> MT Đường 3 Tháng 2 – Q11, TP.HCM</p>
+      </div>
+    </div>
+    <div class="contact">
+      <h3>Liên hệ</h3>
+      <a href="#" aria-label="facebook">Facebook</a>
+      <a href="https://zalo.me/0926991129" target="_blank" rel="noopener">Zalo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const PAGE_SIZE = 12;
+const china = [], japan = [], vsfactory = [];
+
+// ==== China ====
+for(let i=1;i<=28;i++){
+  china.push({
+    id:`rl-china-${i}`,
+    name:`RL China ${i}`,
+    image:`image/rolex/china/rolextrung${i}.jpg`,
+    price:`1.400.000đ`,
+    details:`[RL Thượng Hải]<br>Size 36mm<br>Bản thép PVD 316 bản cao<br>Chống nước 3 ATM<br>Bảo hành máy 1 năm.`
+  });
+}
+
+// ==== Japan ====
+const japanTypes = [
+  "DayDate","DateJust (Niềng đá)","DateJust (Niềng đá)","DateJust",
+  "DateJust(Niềng đá)","DateJust(Niềng đá)","DateJust","DayDate",
+  "DayDate","DayDate (Niềng đá)","DayDate","DayDate",
+  "DateJust","DateJust","DateJust","DateJust","DateJust"
+];
+for(let i=1;i<=17;i++){
+  let label = japanTypes[i-1];
+  let price = label.includes("DateJust") ? "2.500.000đ" :
+              label.includes("DayDate") ? "2.800.000đ" :
+              "2.900.000đ";
+  japan.push({
+    id:`rl-japan-${i}`,
+    name:`RL Japan ${label} ${i}`,
+    image:`image/rolex/japan/rolexnhat${i}.jpg`,
+    price:price,
+    details:`[RL ${label} bản nhà máy ZF]<br>${label.includes("DateJust")?"Size 36mm":"Size 40mm"}<br>Máy Miyota 🇯🇵<br>Chống nước 5 ATM<br>Bảo hành máy 1 năm.`
+  });
+}
+
+// ==== VS Factory ====
+for(let i=1;i<=11;i++){
+  vsfactory.push({
+    id:`rl-vsf-${i}`,
+    name:`RL (VS Factory) ${i}`,
+    image:`image/rolex/vsfactory/vsfactory${i}.jpg`,
+    price:`2.200.000đ`,
+    details:`[RL (VS Factory)]<br>Size 41mm<br>Máy Miyota 🇯🇵<br>Bảo hành máy 1 năm<br>Giá mềm 🔈`
+  });
+}
+
+// ==== Render ====
+const grid = document.getElementById('grid');
+const pager = document.getElementById('pager');
+const input = document.getElementById('q');
+
+function renderCards(list,page){
+  const start = (page-1)*PAGE_SIZE;
+  const slice = list.slice(start,start+PAGE_SIZE);
+  grid.innerHTML = slice.map(p=>`
+    <div class="card">
+      <a class="thumb" href="product.html?id=${p.id}">
+        <img src="${p.image}" alt="${p.name}">
+      </a>
+      <h3>${p.name}</h3>
+      <div class="details">${p.details}</div>
+      <div class="price">💰 ${p.price}</div>
+      <a class="btn" href="product.html?id=${p.id}">Chi tiết</a>
+    </div>`).join('');
+}
+
+function renderPager(list,page,onClick){
+  const totalPages = Math.ceil(list.length/PAGE_SIZE);
+  pager.innerHTML = Array.from({length:totalPages},(_,i)=>`
+    <button ${i+1===page?'class="active"':''} data-page="${i+1}">${i+1}</button>
+  `).join('');
+  pager.querySelectorAll('button').forEach(b=>b.onclick=()=>onClick(parseInt(b.dataset.page)));
+}
+
+let current='china';
+function show(type,page=1){
+  current = type;
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+type).classList.add('active');
+  let list = type==='china'?china:type==='japan'?japan:vsfactory;
+  const q = input.value.toLowerCase().trim();
+  if(q) list = list.filter(p=>p.name.toLowerCase().includes(q));
+  renderCards(list,page);
+  renderPager(list,page,(n)=>show(type,n));
+}
+
+document.getElementById('btn-china').onclick=()=>show('china',1);
+document.getElementById('btn-japan').onclick=()=>show('japan',1);
+document.getElementById('btn-vsfactory').onclick=()=>show('vsfactory',1);
+input.addEventListener('input',()=>show(current,1));
+
+show('china',1);
+</script>
+</body>
+</html>
