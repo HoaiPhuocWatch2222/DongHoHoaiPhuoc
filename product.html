@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chi tiết sản phẩm – Hoai Phuoc Watch</title>
+<style>
+:root{
+  --silver:#f5f6fa;--white:#fff;--text:#222;--muted:#555a6a;
+  --gold:#d4af37;--border:#e7e8f2;--max:1200px;--shadow:0 10px 25px rgba(0,0,0,.06)
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--silver);color:var(--text);
+  font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+.container{max-width:var(--max);margin:auto;padding:24px}
+
+/* Header */
+header{background:var(--white);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:44px;border-radius:8px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+.brand .title{font-weight:800;letter-spacing:.2px}
+.brand .title small{display:block;color:var(--muted);font-weight:500}
+.spacer{flex:1}
+.menu a{
+  padding:12px 14px;border-radius:10px;color:#1b1f2a;white-space:nowrap
+}
+.menu a:hover,.menu a.active{color:var(--gold);background:#fff8d9}
+.cta{
+  background:linear-gradient(135deg,var(--gold),#f7e7a1);
+  color:#1a1a1a;padding:10px 14px;border-radius:12px;font-weight:800
+}
+
+/* Detail layout */
+.detail{
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:28px;margin-top:24px
+}
+@media (max-width:900px){.detail{grid-template-columns:1fr}}
+.figure{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:12px;box-shadow:var(--shadow);padding:12px
+}
+.figure img{width:100%;border-radius:10px;transition:transform .3s}
+.figure:hover img{transform:scale(1.03)}
+.meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted)}
+.price{color:#6b5200;font-weight:800}
+.badge{font-size:12px;border:1px dashed #d3d7e6;border-radius:8px;padding:2px 8px}
+.specs{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:12px;padding:16px;margin-top:16px
+}
+.buy{margin-top:20px}
+.btn{
+  display:inline-block;padding:10px 14px;border-radius:10px;
+  border:1px solid var(--border);background:var(--white);
+  text-align:center;cursor:pointer
+}
+.btn.primary{
+  background:linear-gradient(135deg,var(--gold),#f7e7a1);
+  border-color:var(--gold);color:#1a1a1a;font-weight:800
+}
+
+/* Footer */
+footer{margin-top:60px;border-top:1px solid var(--border);background:var(--white)}
+.footer-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;padding:30px 0}
+.shop{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:center}
+.shop .logo{width:80px;height:80px;border-radius:10px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.shop h3{margin:0}
+.shop p{margin:6px 0;color:var(--muted)}
+.contact a{display:block;padding:6px 0;color:#111}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="Hoai Phuoc Watch logo">
+      <div class="title">Hoai Phuoc Watch 2222<small>Đồng hồ Homage &amp; Dresswatch</small></div>
+    </a>
+    <div class="spacer"></div>
+    <nav class="menu">
+      <a href="index.html" class="nav-home">Trang chủ</a>
+      <a href="rolex.html" class="nav-rolex">RL</a>
+      <a href="hublot.html" class="nav-hublot">HL</a>
+      <a href="cartier.html" class="nav-cartier">CT</a>
+    </nav>
+    <a class="cta" href="https://zalo.me/0926991129" target="_blank" rel="noopener">Zalo 24/7</a>
+  </div>
+</header>
+
+<main class="container">
+  <p style="font-size:14px;color:#666">
+    <a href="index.html">Trang chủ</a> › <span id="breadcrumb"></span>
+  </p>
+
+  <div class="detail">
+    <div class="figure"><img id="big" src="" alt="Ảnh sản phẩm"></div>
+    <div>
+      <h1 id="title"></h1>
+      <div class="meta"><span class="badge" id="brand"></span><span class="price" id="price"></span></div>
+      <div class="specs" id="details"></div>
+      <div class="buy">
+        <a class="btn primary" href="https://zalo.me/0926991129" target="_blank">MUA NGAY</a>
+        <a class="btn" href="index.html">← Quay lại trang chủ</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-wrap">
+    <div class="shop">
+      <div class="logo"><img src="images/logo.png" alt="logo"></div>
+      <div>
+        <h3>Hoai Phuoc Watch 2222</h3>
+        <p>📞 <strong>HOTLINE/ZALO:</strong> <a href="tel:0926991129">0926991129</a></p>
+        <p>📍 <strong>ĐỊA CHỈ:</strong> MT Đường 3 Tháng 2 – Q11, TP.HCM</p>
+      </div>
+    </div>
+    <div class="contact">
+      <h3>Liên hệ</h3>
+      <a href="https://www.facebook.com/Donghodep2222" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://zalo.me/0926991129" target="_blank">Zalo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ======== DANH SÁCH SẢN PHẨM TỔNG ========
+const PRODUCTS = [];
+
+// Rolex China
+for(let i=1;i<=28;i++){
+  PRODUCTS.push({
+    id:`rl-china-${i}`,
+    brand:"RL",
+    category:"China",
+    name:`RL China ${i}`,
+    price:"1.400.000đ",
+    image:`image/rolex/china/rolextrung${i}.jpg`,
+    details:`[RL Thượng Hải]<br>Size 36mm<br>Bản thép PVD 316 bản cao<br>Chống nước 3ATM<br>Bảo hành máy 1 năm.`
+  });
+}
+// Rolex Japan
+for(let i=1;i<=17;i++){
+  const types=["DayDate","DateJust (Niềng đá)","DateJust (Niềng đá)","DateJust","DateJust(Niềng đá)","DateJust(Niềng đá)","DateJust","DayDate","DayDate","DayDate (Niềng đá)","DayDate","DayDate","DateJust","DateJust","DateJust","DateJust","DateJust"];
+  const label=types[i-1];
+  const price=label.includes("DayDate")?"2.800.000đ":label.includes("Niềng")?"2.900.000đ":"2.500.000đ";
+  PRODUCTS.push({
+    id:`rl-japan-${i}`,
+    brand:"RL",
+    category:"Japan",
+    name:`RL Japan ${label} ${i}`,
+    price,
+    image:`image/rolex/japan/rolexnhat${i}.jpg`,
+    details:`[RL ${label} bản ZF]<br>Size ${label.includes("DateJust")?"36mm":"40mm"}<br>Máy Miyota 🇯🇵<br>Chống nước 5ATM<br>Bảo hành máy 1 năm.`
+  });
+}
+// Rolex VS Factory
+for(let i=1;i<=11;i++){
+  PRODUCTS.push({
+    id:`rl-vsf-${i}`,
+    brand:"RL",
+    category:"VS Factory",
+    name:`RL (VS Factory) ${i}`,
+    price:"2.200.000đ",
+    image:`image/rolex/vsfactory/vsfactory${i}.jpg`,
+    details:`[VS Factory]<br>Size 41mm<br>Máy Miyota 🇯🇵<br>Bảo hành máy 1 năm.`
+  });
+}
+// Hublot
+for(let i=1;i<=7;i++){
+  PRODUCTS.push({
+    id:`cf-${i}`,
+    brand:"HL",
+    category:"Classic Fusion",
+    name:`Classic Fusion ${i}`,
+    price:"2.600.000đ – 2.800.000đ",
+    image:`image/hublot/classicfusion/cf${i}.jpg`,
+    details:`HL TW Factory size 42mm<br>Kính Sapphire<br>Máy Miyota 🇯🇵<br>Bảo hành máy 1 năm.`
+  });
+}
+for(let i=1;i<=3;i++){
+  PRODUCTS.push({
+    id:`skl-${i}`,
+    brand:"HL",
+    category:"Skeleton",
+    name:`Skeleton ${i}`,
+    price:"2.200.000đ",
+    image:`image/hublot/skeleton/skl${i}.jpg`,
+    details:`HL Skeleton 44mm<br>Kính Sapphire<br>Máy Miyota 🇯🇵<br>Bảo hành máy 1 năm.`
+  });
+}
+// Cartier
+for(let i=1;i<=7;i++){
+  const leather=i===4;
+  PRODUCTS.push({
+    id:`cartier-00${i}`,
+    brand:"CT",
+    category:"Santos",
+    name:leather?"CT Santos 004 (Dây da)":`CT Santos 00${i}`,
+    price:"2.300.000đ",
+    image:`image/cartier/cartier${i}.jpg`,
+    details:`Máy cơ Miyota Nhật 🇯🇵<br>Size 39mm<br>Chống nước 3ATM<br>Bảo hành máy 1 năm<br>${leather?"Bản dây da":"Bản dây thép"}.`
+  });
+}
+
+// ====== HIỂN THỊ SẢN PHẨM ======
+const params=new URLSearchParams(window.location.search);
+const id=params.get("id");
+const p=PRODUCTS.find(x=>x.id===id);
+
+if(!id){
+  document.querySelector(".detail").innerHTML=`<h2 style="color:#a00">Không có mã sản phẩm trong URL.</h2>`;
+}
+else if(!p){
+  document.querySelector(".detail").innerHTML=`<h2 style="color:#a00">Không tìm thấy sản phẩm ID: ${id}</h2>`;
+}
+else{
+  document.title=`${p.name} – Hoai Phuoc Watch`;
+  document.getElementById("breadcrumb").textContent=`${p.brand} – ${p.category}`;
+  document.getElementById("big").src=p.image;
+  document.getElementById("title").textContent=p.name;
+  document.getElementById("brand").textContent=p.brand;
+  document.getElementById("price").textContent=p.price;
+  document.getElementById("details").innerHTML=p.details;
+
+  // Active menu
+  document.querySelector(".nav-"+p.brand.toLowerCase())?.classList.add("active");
+}
+</script>
+</body>
+</html>
