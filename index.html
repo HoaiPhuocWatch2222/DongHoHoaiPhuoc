@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoai Phuoc Watch 2222 - Đồng Hồ Chính Hãng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap");
+
+      body {
+        font-family: "Roboto", sans-serif;
+        scroll-behavior: smooth;
+      }
+      h1,
+      h2,
+      h3,
+      .nav-item {
+        font-family: "Playfair Display", serif;
+      }
+      .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+      .product-card:hover .secondary-img {
+        opacity: 1;
+      }
+      .secondary-img {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .zalo-ring {
+        animation: pulse-blue 2s infinite;
+      }
+      @keyframes pulse-blue {
+        0% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7);
+        }
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 10px rgba(0, 104, 255, 0);
+        }
+        100% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(0, 104, 255, 0);
+        }
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow-y: auto;
+      }
+      /* Mobile Menu Style */
+      #mobile-menu {
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+      }
+      #mobile-menu.active {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Sticky Header -->
+    <header class="sticky-header border-b border-gray-200">
+      <nav
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div
+          class="text-2xl font-bold tracking-tighter text-blue-900 cursor-pointer"
+          onclick="showSection('home')"
+        >
+          Hoai Phuoc<span class="font-light italic text-yellow-600">Watch 2222</span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul
+          class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest"
+        >
+          <li>
+            <a
+              href="#"
+              onclick="showSection('home')"
+              class="hover:text-yellow-600 transition"
+              >Trang chủ</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="showSection('all-products')"
+              class="hover:text-yellow-600 transition"
+              >Tất cả sản phẩm</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="showSection('men')"
+              class="hover:text-yellow-600 transition"
+              >Đồng hồ Nam</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="showSection('women')"
+              class="hover:text-yellow-600 transition"
+              >Đồng hồ Nữ</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden">
+          <button
+            onclick="toggleMobileMenu()"
+            class="text-xl focus:outline-none"
+          >
+            <i class="fa-solid fa-bars cursor-pointer"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-white z-[60] md:hidden flex flex-col p-6"
+    >
+      <div class="flex justify-between items-center mb-10">
+        <div class="text-xl font-bold text-blue-900">MENU</div>
+        <button onclick="toggleMobileMenu()" class="text-2xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="space-y-6 text-lg font-medium uppercase tracking-widest">
+        <li>
+          <a
+            href="#"
+            onclick="handleMobileNav('home')"
+            class="block border-b pb-2"
+            >Trang chủ</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            onclick="handleMobileNav('all-products')"
+            class="block border-b pb-2"
+            >Tất cả sản phẩm</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            onclick="handleMobileNav('men')"
+            class="block border-b pb-2"
+            >Đồng hồ Nam</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            onclick="handleMobileNav('women')"
+            class="block border-b pb-2"
+            >Đồng hồ Nữ</a
+          >
+        </li>
+      </ul>
+      <div class="mt-auto pt-10 border-t text-center">
+        <p class="text-sm text-gray-500 mb-4 font-bold">
+          HOTLINE: 088 668 8012
+        </p>
+        <div class="flex justify-center space-x-4">
+          <i class="fa-brands fa-facebook text-2xl text-blue-600"></i>
+          <i class="fa-brands fa-tiktok text-2xl"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Sections -->
+    <main id="main-content">
+      <!-- HOME PAGE -->
+      <section id="home-section">
+        <!-- Banner -->
+        <div
+          class="relative h-[1200px] bg-black flex items-center overflow-hidden"
+        >
+          <img
+            src="images/2.jpg"
+            class="absolute w-full h-full object-cover opacity-60"
+            alt="Banner"
+          />
+          <div class="container mx-auto px-4 relative z-10 text-white">
+            <h1 class="text-5xl md:text-7xl mb-4 leading-tight">
+              Thời Gian Là <br /><span class="italic text-yellow-500"
+                >Đẳng Cấp</span
+              >
+            </h1>
+            <p class="text-lg mb-8 max-w-lg font-light">
+              Tuyển chọn những mẫu đồng hồ tinh hoa nhất, khẳng định vị thế và
+              phong cách cá nhân của bạn.
+            </p>
+            <button
+              onclick="showSection('all-products')"
+              class="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-none transition uppercase tracking-widest text-sm"
+            >
+              Khám phá ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Cam kết -->
+        <div class="bg-white py-12 border-b">
+          <div
+            class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+          >
+            <div>
+              <i
+                class="fa-solid fa-shield-halved text-3xl text-yellow-600 mb-3"
+              ></i>
+              <h3 class="font-bold mb-1">Cam kết Chính Hãng</h3>
+              <p class="text-sm text-gray-500">
+                Hoàn tiền 200% nếu phát hiện hàng giả
+              </p>
+            </div>
+            <div>
+              <i
+                class="fa-solid fa-truck-fast text-3xl text-yellow-600 mb-3"
+              ></i>
+              <h3 class="font-bold mb-1">Giao Hàng Toàn Quốc</h3>
+              <p class="text-sm text-gray-500">
+                Kiểm tra hàng trước khi thanh toán
+              </p>
+            </div>
+            <div>
+              <i
+                class="fa-solid fa-screwdriver-wrench text-3xl text-yellow-600 mb-3"
+              ></i>
+              <h3 class="font-bold mb-1">Bảo Hành 5 Năm</h3>
+              <p class="text-sm text-gray-500">Thay pin miễn phí trọn đời</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Picks -->
+        <div class="container mx-auto px-4 py-20">
+          <div class="text-center mb-12">
+            <h2
+              class="text-3xl md:text-4xl mb-2 font-bold uppercase tracking-tight"
+            >
+              Sản Phẩm Bán Chạy
+            </h2>
+            <div class="w-20 h-1 bg-yellow-600 mx-auto"></div>
+          </div>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
+            id="top-picks-grid"
+          >
+            <!-- Products will be injected here -->
+          </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="bg-gray-100 py-20">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold uppercase tracking-tight">
+                Khách Hàng Nói Gì
+              </h2>
+              <p class="text-gray-500 italic">
+                Uy tín được khẳng định qua đánh giá của khách hàng
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-white p-6 shadow-sm border rounded-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600"
+                  >
+                    A
+                  </div>
+                  <div class="ml-3">
+                    <h4 class="font-bold text-sm">Anh Tuấn - Hà Nội</h4>
+                    <div class="text-yellow-500 text-xs">
+                      <i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed italic">
+                  "Đồng hồ đẹp hơn cả trong ảnh, tư vấn rất nhiệt tình.
+                  Giá cả phải chăng."
+                </p>
+              </div>
+              <div class="bg-white p-6 shadow-sm border rounded-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center font-bold text-pink-600"
+                  >
+                    H
+                  </div>
+                  <div class="ml-3">
+                    <h4 class="font-bold text-sm">Chị Hồng - TP.HCM</h4>
+                    <div class="text-yellow-500 text-xs">
+                      <i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed italic">
+                  "Dịch vụ thay pin trọn đời rất tốt. Đóng gói hàng cực kỳ cẩn
+                  thận, sẽ ủng hộ shop dài lâu ạ!!!."
+                </p>
+              </div>
+              <div class="bg-white p-6 shadow-sm border rounded-lg">
+                <div class="flex items-center mb-4">
+                  <div
+                    class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center font-bold text-green-600"
+                  >
+                    M
+                  </div>
+                  <div class="ml-3">
+                    <h4 class="font-bold text-sm">Anh Minh - Đà Nẵng</h4>
+                    <div class="text-yellow-500 text-xs">
+                      <i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed italic">
+                  "Mới mua thử mẫu thể thao nam, đeo rất sang. Giao hàng nhanh hơn
+                  dự kiến."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT LIST SECTION -->
+      <section id="products-section" class="hidden py-12">
+        <div class="container mx-auto px-4">
+          <h2 id="list-title" class="text-3xl font-bold mb-8 uppercase">
+            Toàn Bộ Sản Phẩm
+          </h2>
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10"
+            id="product-list-grid"
+          >
+            <!-- Products will be injected here -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+      <div
+        class="bg-white max-w-5xl mx-auto my-10 relative rounded-lg overflow-hidden shadow-2xl"
+      >
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-4 z-50 text-gray-500 hover:text-black"
+        >
+          <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+        <div class="grid grid-cols-1 md:grid-cols-2" id="modal-content">
+          <!-- Content injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="fixed bottom-6 right-6 flex flex-col space-y-4 z-40">
+      <a
+        href="tel:0886688012"
+        class="bg-red-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"
+      >
+        <i class="fa-solid fa-phone text-2xl"></i>
+      </a>
+      <a
+        href="https://zalo.me/0886688012"
+        target="_blank"
+        class="zalo-ring bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition"
+      >
+        <img
+          src="https://img.icons8.com/color/48/zalo.png"
+          class="w-8 h-8 filter brightness-0 invert"
+          alt="Zalo"
+        />
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-gray-400 py-12">
+      <div class="container mx-auto px-4 text-center">
+        <div
+          class="text-2xl font-bold tracking-tighter text-white mb-4 cursor-pointer"
+          onclick="showSection('home')"
+        >
+          Hoai Phuoc<span class="font-light italic text-yellow-600">Watch 2222</span>
+        </div>
+        <p class="text-sm max-w-md mx-auto mb-6">
+          Chuyên cung cấp các dòng đồng hồ cao cấp chính hãng. Uy tín
+          tạo nên thương hiệu.
+        </p>
+        <div class="flex justify-center space-x-6 mb-8 text-xl">
+          <a href="https://www.facebook.com/profile.php?id=61569008491031" target="_blank">
+            <i class="fa-brands fa-facebook hover:text-white cursor-pointer"></i>
+          </a>
+          <a href="https://www.tiktok.com/@hoaiphuocwatch2222?_r=1&_t=ZS-95mdVSZBavI" target="_blank">
+            <i class="fa-brands fa-tiktok hover:text-white cursor-pointer"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const SHOP_PHONE = "0886688012"; // Thay bằng số của bạn
+
+      const products = [
+        {
+          id: 1,
+          name: "Đồng Hồ Alexander Ferros 5052R08",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052R08/Alexander_Ferros 5052R08(4).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052R08/Alexander_Ferros 5052R08(3).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052R08/Alexander_Ferros 5052R08(2).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052R08/Alexander_Ferros 5052R08(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "38mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+           id: 2,
+          name: "Đồng Hồ Alexander Ferros 5052S01",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S01/Alexander_Ferros 5052S01(1).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S01/Alexander_Ferros 5052S01(4).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S01/Alexander_Ferros 5052S01(3).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S01/Alexander_Ferros 5052S01(2).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "38mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+           id: 3,
+          name: "Đồng Hồ Alexander Ferros 5052S02",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S02/Alexander_Ferros 5052S02(3).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S02/Alexander_Ferros 5052S02(5).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S02/Alexander_Ferros 5052S02(2).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S02/Alexander_Ferros 5052S02(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "38mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 4,
+          name: "Đồng Hồ Alexander Ferros 5052S05",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S05/Alexander_Ferros 5052S05(3).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S05/Alexander_Ferros 5052S05(1).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S05/Alexander_Ferros 5052S05(2).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 5052S05/Alexander_Ferros 5052S05(4).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "38mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 5,
+          name: "Đồng Hồ Alexander Ferros 6312S05",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 6312S05/Alexander_Ferros 6312S05(2).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 6312S05/Alexander_Ferros 6312S05(3).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 6312S05/Alexander_Ferros 6312S05(4).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 6312S05/Alexander_Ferros 6312S05(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "40mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 6,
+          name: "Đồng Hồ Alexander Ferros 6312S08",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 6312S08/Alexander_Ferros 6312S08(6).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 6312S08/Alexander_Ferros 6312S08(4).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 6312S08/Alexander_Ferros 6312S08(2).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 6312S08/Alexander_Ferros 6312S08(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "40mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 7,
+          name: "Đồng Hồ Alexander Ferros 8181D082",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8181D082/Alexander_Ferros 8181D082(1).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8181D082/Alexander_Ferros 8181D082(2).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8181D082/Alexander_Ferros 8181D082(3).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8181D082/Alexander_Ferros 8181D082(4).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan, Niềng đá vuông cực sang trọng",
+          size: "36mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 8,
+          name: "Đồng Hồ Alexander Ferros 8232S01",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232S01/Alexander_Ferros 8232S01(3).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232S01/Alexander_Ferros 8232S01(4).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232S01/Alexander_Ferros 8232S01(5).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232S01/Alexander_Ferros 8232S01(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "38mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 9,
+          name: "Đồng Hồ Alexander Ferros 8232S02",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232S02/Alexander_Ferros 8232S02(4).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232S02/Alexander_Ferros 8232S02(1).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232S02/Alexander_Ferros 8232S02(3).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232S02/Alexander_Ferros 8232S02(2).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "38mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 10,
+          name: "Đồng hồ Alexander Ferros 2251FR-19",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 2251FR-19/Alexander_Ferros 2251FR-19(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 11,
+          name: "Đồng hồ Alexander Ferros 2251FS-01",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 2251FS-01/Alexander Ferros 2251FS-01(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 12,
+          name: "Đồng hồ Alexander Ferros 2251FS-05",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 2251FS-05/Alexander Ferros 2251FS-05(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 13,
+          name: "Đồng hồ Alexander Ferros 2251FS-18",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 2251FS-18/Alexander Ferros 2251FS-18(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+         {
+          id: 14,
+          name: "Đồng hồ Alexander Ferros 2251FS-19",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 2251FS-19/Alexander_Ferros 2251FS-19(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+         {
+          id: 15,
+          name: "Đồng hồ Alexander Ferros 6152R03",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 6152R03/Alexander_Ferros 6152R03(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 16,
+          name: "Đồng hồ Alexander Ferros 6342R-02",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 6342R-02/Alexander_Ferros 6342R-02(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+         {
+          id: 17,
+          name: "Đồng hồ Alexander Ferros 6342R-16",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 6342R-16/Alexander_Ferros 6342R-16(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+         {
+          id: 18,
+          name: "Đồng hồ Alexander Ferros 6342S-16",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 6342S-16/Alexander_Ferros 6342S-16(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+         {
+          id: 19,
+          name: "Đồng hồ Alexander Ferros 7218R-02",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 7218R-02/Alexander Ferros 7218R-02(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+         {
+          id: 20,
+          name: "Đồng hồ Alexander Ferros 7281S-02",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 7281S-02/Alexander Ferros 7281S-02(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 21,
+          name: "Đồng hồ Alexander Ferros 7282R-02",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 7282R-02/Alexander Ferros 7282R-02(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 22,
+          name: "Đồng hồ Alexander Ferros 7282S-02",
+          category: "nu",
+          img1: "image/đồng hồ nữ/Đồng Hồ Alexander Ferros 7282S-02/Alexander Ferros 7282S-02(1).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "31mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 23,
+          name: "Đồng hồ Alexander Ferros 8132D08",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8132D08/Alexander_Ferros 8132D08(1).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8132D08/Alexander_Ferros 8132D08(2).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8132D08/Alexander_Ferros 8132D08(3).jpg",
+          img4: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8132D08/Alexander_Ferros 8132D08(4).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "38mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+        {
+          id: 24,
+          name: "Đồng hồ Alexander Ferros 8232D15",
+          category: "nam",
+          img1: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232D15/Alexander_Ferros 8232D15(1).jpg",
+          img2: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232D15/Alexander_Ferros 8232D15(2).jpg",
+          img3: "image/đồng hồ nam/Đồng Hồ Alexander Ferros 8232D15/Alexander_Ferros 8232D15(3).jpg",
+          brand: "Alexander Ferros",
+          material: "Máy cơ: Miyota Japan",
+          size: "38mm",
+          warranty: "5 năm (theo chính sách hãng)",
+          stock: "Sẵn hàng tại TPHCM",
+        },
+      
+      ];
+
+  // ================= MOBILE MENU =================
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobile-menu");
+  menu.classList.toggle("active");
+  document.body.style.overflow = menu.classList.contains("active")
+    ? "hidden"
+    : "auto";
+}
+
+function handleMobileNav(section) {
+  toggleMobileMenu();
+  showSection(section);
+}
+
+// ================= PRODUCT CARD =================
+function createProductCard(p) {
+  return `
+    <div class="product-card group cursor-pointer bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+      
+      <div class="relative overflow-hidden aspect-[4/5]" onclick="openProduct(${p.id})">
+        <img src="${p.img1}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+        ${
+          p.img2
+            ? `<img src="${p.img2}" class="secondary-img absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">`
+            : ""
+        }
+
+        <div class="absolute bottom-0 left-0 right-0 bg-white/90 translate-y-full group-hover:translate-y-0 transition duration-300 p-3 flex gap-2">
+          <button class="flex-1 bg-slate-900 text-white py-2 text-xs uppercase font-bold">Chi tiết</button>
+          <a href="https://zalo.me/${SHOP_PHONE}?text=Chào shop, tôi muốn tư vấn mẫu ${p.name}" 
+             class="bg-blue-600 text-white p-2 flex items-center justify-center">
+            <img src="https://img.icons8.com/color/48/zalo.png" class="w-5 h-5 filter brightness-0 invert">
+          </a>
+        </div>
+      </div>
+
+      <div class="p-4 text-center">
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">${p.brand}</p>
+        <h3 class="font-bold text-sm mb-2 group-hover:text-yellow-600 transition truncate">${p.name}</h3>
+      </div>
+    </div>
+  `;
+}
+
+// ================= RENDER =================
+function renderProducts(filter = "all", targetGrid = "product-list-grid") {
+  const container = document.getElementById(targetGrid);
+  container.innerHTML = "";
+
+  let filtered = products;
+
+  if (filter !== "all") {
+    filtered = products.filter((p) => p.category === filter);
+  }
+
+  filtered.forEach((p) => {
+    container.innerHTML += createProductCard(p);
+  });
+}
+
+// ================= NAVIGATION =================
+function showSection(section) {
+  document.getElementById("home-section").classList.add("hidden");
+  document.getElementById("products-section").classList.add("hidden");
+  window.scrollTo(0, 0);
+
+  if (section === "home") {
+    document.getElementById("home-section").classList.remove("hidden");
+    return;
+  }
+
+  document.getElementById("products-section").classList.remove("hidden");
+
+  const title = document.getElementById("list-title");
+
+  if (section === "all-products") {
+    title.innerText = "Tất Cả Sản Phẩm";
+    renderProducts("all");
+  }
+
+  if (section === "men") {
+    title.innerText = "Đồng Hồ Nam";
+    renderProducts("nam"); // FIX CHUẨN
+  }
+
+  if (section === "women") {
+    title.innerText = "Đồng Hồ Nữ";
+    renderProducts("nu"); // FIX CHUẨN
+  }
+}
+
+// ================= MODAL =================
+function openProduct(id) {
+  const p = products.find((prod) => prod.id === id);
+  const modal = document.getElementById("productModal");
+  const content = document.getElementById("modal-content");
+
+  content.innerHTML = `
+    <div class="p-6 bg-gray-50">
+      <div class="mb-4 aspect-square rounded-lg overflow-hidden border">
+        <img id="main-product-img" src="${p.img1}" class="w-full h-full object-cover">
+      </div>
+
+      <div class="grid grid-cols-4 gap-2">
+        ${p.img1 ? `<img src="${p.img1}" onclick="updateMainImg('${p.img1}')" class="aspect-square object-cover cursor-pointer border">` : ""}
+        ${p.img2 ? `<img src="${p.img2}" onclick="updateMainImg('${p.img2}')" class="aspect-square object-cover cursor-pointer border">` : ""}
+        ${p.img3 ? `<img src="${p.img3}" onclick="updateMainImg('${p.img3}')" class="aspect-square object-cover cursor-pointer border">` : ""}
+        ${p.img4 ? `<img src="${p.img4}" onclick="updateMainImg('${p.img4}')" class="aspect-square object-cover cursor-pointer border">` : ""}
+      </div>
+    </div>
+
+    <div class="p-8">
+      <span class="text-yellow-600 font-bold uppercase tracking-widest text-xs">${p.brand}</span>
+      <h2 class="text-3xl font-bold mb-2">${p.name}</h2>
+      
+      <div class="mb-6">
+        <h4 class="font-bold mb-3 border-b pb-1 text-sm uppercase">Thông số kỹ thuật</h4>
+        <table class="w-full text-sm">
+          <tr class="border-b"><td class="py-2 text-gray-500">Chất liệu</td><td class="py-2 font-medium">${p.material}</td></tr>
+          <tr class="border-b"><td class="py-2 text-gray-500">Size mặt</td><td class="py-2 font-medium">${p.size}</td></tr>
+          <tr class="border-b"><td class="py-2 text-gray-500">Bảo hành</td><td class="py-2 font-medium">${p.warranty}</td></tr>
+          <tr class="border-b"><td class="py-2 text-gray-500">Có sẵn</td><td class="py-2 font-medium">${p.stock}</td></tr>
+        </table>
+      </div>
+
+      <a href="https://zalo.me/${SHOP_PHONE}?text=Chào shop, tôi muốn tư vấn mẫu ${p.name}" target="_blank" 
+         class="w-full bg-[#0068ff] text-white flex items-center justify-center py-4 rounded-full font-bold">
+        TƯ VẤN QUA ZALO
+      </a>
+    </div>
+  `;
+
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden";
+}
+
+// ================= UTIL =================
+function updateMainImg(url) {
+  document.getElementById("main-product-img").src = url;
+}
+
+function closeModal() {
+  document.getElementById("productModal").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+window.onclick = function (event) {
+  const modal = document.getElementById("productModal");
+  if (event.target == modal) closeModal();
+};
+
+// ================= INIT =================
+function getRandomProducts(arr, count) {
+  const shuffled = [...arr].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+window.onload = () => {
+  const randomProducts = getRandomProducts(products, 8); // lấy 8 sp random
+  const container = document.getElementById("top-picks-grid");
+  container.innerHTML = "";
+
+  randomProducts.forEach((p) => {
+    container.innerHTML += createProductCard(p);
+  });
+};
+    </script>
+  </body>
+</html>
